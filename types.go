@@ -184,21 +184,28 @@ type AssetPosition struct {
 }
 
 type Position struct {
-	Coin           string   `json:"coin"`
-	EntryPx        *string  `json:"entryPx"`
-	Leverage       Leverage `json:"leverage"`
-	LiquidationPx  *string  `json:"liquidationPx"`
-	MarginUsed     string   `json:"marginUsed"`
-	PositionValue  string   `json:"positionValue"`
-	ReturnOnEquity string   `json:"returnOnEquity"`
-	Szi            string   `json:"szi"`
-	UnrealizedPnl  string   `json:"unrealizedPnl"`
+	Coin           string     `json:"coin"`
+	EntryPx        *string    `json:"entryPx"`
+	Leverage       Leverage   `json:"leverage"`
+	LiquidationPx  *string    `json:"liquidationPx"`
+	MarginUsed     string     `json:"marginUsed"`
+	PositionValue  string     `json:"positionValue"`
+	ReturnOnEquity string     `json:"returnOnEquity"`
+	Szi            string     `json:"szi"`
+	UnrealizedPnl  string     `json:"unrealizedPnl"`
+	CumFunding     CumFunding `json:"cumFunding"`
 }
 
 type Leverage struct {
 	Type   string  `json:"type"`
 	Value  int     `json:"value"`
 	RawUsd *string `json:"rawUsd,omitempty"`
+}
+
+type CumFunding struct {
+	AllTime     string `json:"allTime"`
+	SinceOpen   string `json:"sinceOpen"`
+	SinceChange string `json:"sinceChange"`
 }
 
 type UserState struct {
